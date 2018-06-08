@@ -19,7 +19,7 @@ function bithash_verify($pass, $hash){
 	$trun_md5 = substr($md5, 1, 5).substr($md5, 3, 14).substr($md5, 12, 13);
 	//Append prefix.
 	$bithash_pass = '$Bh$'.$trun_md5;
-	//Return true/false depending on whether the pass matches the hash.
+	//Return a true or false value depending on whether the pass matches the hash.
 	return password_verify($bithash_pass, $hash);
 }
 ?>
