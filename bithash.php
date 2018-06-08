@@ -2,7 +2,7 @@
 function bithash($pass){
 	//Convert pass to md5.
 	$md5 = md5($pass);
-	//Truncate MD5 in several locations and combine them.
+	//Truncate md5 in several locations and combine them.
 	$trun_md5 = substr($md5, 1, 5).substr($md5, 3, 14).substr($md5, 12, 13);
 	//Append prefix.
 	$bithash_md5 = '$Bh$'.$trun_md5;
@@ -13,8 +13,9 @@ function bithash($pass){
 }
 
 function bithash_verify($pass, $hash){
+	//Convert pass to md5.
 	$md5 = md5($pass);
-	//Truncate MD5 in several locations and combine them.
+	//Truncate md5 in several locations and combine them.
 	$trun_md5 = substr($md5, 1, 5).substr($md5, 3, 14).substr($md5, 12, 13);
 	//Append prefix.
 	$bithash_pass = '$Bh$'.$trun_md5;
